@@ -1,0 +1,13 @@
+<!-- Lista de Pontos -->
+
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listPlaces"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@android:color/transparent"
+  	android:dividerHeight="12dp"
+    tools:context="com.perta.ListPlacesActivity$ListPlacesFragments"
+    android:paddingTop="10dp" >
+
+</ListView>
