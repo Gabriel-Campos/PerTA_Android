@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 
+import com.fragments.ListPlacesFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -17,13 +18,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.services.GPSTracker;
 import com.services.Utils;
 
-import fragments.ListPlacesFragments;
-
 /**
  * Atividade responsável pela tela inicial
  * 
  * @author Silas
- * 
+ * @see Activity
+ * @see OnQueryTextListener
  */
 public class ListPlacesActivity extends Activity implements OnQueryTextListener {
 
@@ -93,7 +93,7 @@ public class ListPlacesActivity extends Activity implements OnQueryTextListener 
 	 */
 	private void onExecuteList() {
 		// cria o fragmento da lista
-		listFagment = ListPlacesFragments.newInstance(gps.getLatitude(),
+		listFagment = ListPlacesFragment.newInstance(gps.getLatitude(),
 				gps.getLongitude());
 
 		getFragmentManager().beginTransaction()
@@ -125,8 +125,13 @@ public class ListPlacesActivity extends Activity implements OnQueryTextListener 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		switch (id) {
+		case R.id.action_settings:
 			return true;
+		case R.id.action_refresh:
+			onRefreshList();
+			return true;
+
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -135,12 +140,28 @@ public class ListPlacesActivity extends Activity implements OnQueryTextListener 
 	public boolean onQueryTextSubmit(String query) {
 		// fecha o layout widget
 		MenuItemCompat.collapseActionView(search);
+		onRefreshList(query);
+		return true;
+	}
+
+	/**
+	 * Atualiza a lista, sem buscar por lugar
+	 */
+	private void onRefreshList() {
+		onRefreshList("");
+	}
+
+	/**
+	 * Atualiza a lista, buscando por lugar
+	 * 
+	 * @param query
+	 */
+	private void onRefreshList(String query) {
 		// atualiza a localização
 		gps.getLocation();
 		// atualiza a lista
-		((ListPlacesFragments) listFagment).dataUpdate(query,
-				gps.getLatitude(), gps.getLongitude());
-		return true;
+		((ListPlacesFragment) listFagment).dataUpdate(query, gps.getLatitude(),
+				gps.getLongitude());
 	}
 
 	@Override

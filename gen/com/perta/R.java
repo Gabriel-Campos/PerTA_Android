@@ -17,6 +17,8 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
+        /**  Categorias do filtro 
+         */
         public static final int categories=0x7f0d0000;
     }
     public static final class attr {
@@ -1279,20 +1281,21 @@ containing a value of this type.
         public static final int common_signin_btn_text_normal_light=0x7f02006e;
         public static final int common_signin_btn_text_pressed_dark=0x7f02006f;
         public static final int common_signin_btn_text_pressed_light=0x7f020070;
-        public static final int ic_action_search=0x7f020071;
-        public static final int ic_bag=0x7f020072;
-        public static final int ic_beer=0x7f020073;
-        public static final int ic_briefcase=0x7f020074;
-        public static final int ic_launcher=0x7f020075;
-        public static final int ic_leaf=0x7f020076;
-        public static final int ic_location=0x7f020077;
-        public static final int ic_plusone_medium_off_client=0x7f020078;
-        public static final int ic_plusone_small_off_client=0x7f020079;
-        public static final int ic_plusone_standard_off_client=0x7f02007a;
-        public static final int ic_plusone_tall_off_client=0x7f02007b;
-        public static final int ic_wifi=0x7f02007c;
-        public static final int pertaicon=0x7f02007d;
-        public static final int scperta=0x7f02007e;
+        public static final int ic_action_refresh=0x7f020071;
+        public static final int ic_action_search=0x7f020072;
+        public static final int ic_bag=0x7f020073;
+        public static final int ic_beer=0x7f020074;
+        public static final int ic_briefcase=0x7f020075;
+        public static final int ic_launcher=0x7f020076;
+        public static final int ic_leaf=0x7f020077;
+        public static final int ic_location=0x7f020078;
+        public static final int ic_plusone_medium_off_client=0x7f020079;
+        public static final int ic_plusone_small_off_client=0x7f02007a;
+        public static final int ic_plusone_standard_off_client=0x7f02007b;
+        public static final int ic_plusone_tall_off_client=0x7f02007c;
+        public static final int ic_wifi=0x7f02007d;
+        public static final int pertaicon=0x7f02007e;
+        public static final int scperta=0x7f02007f;
     }
     public static final class id {
         public static final int action_bar=0x7f07001f;
@@ -1306,6 +1309,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070019;
         public static final int action_menu_presenter=0x7f07001a;
         public static final int action_mode_close_button=0x7f070027;
+        public static final int action_refresh=0x7f070052;
         public static final int action_search=0x7f070051;
         public static final int action_settings=0x7f070050;
         public static final int activity_chooser_view_content=0x7f070028;
@@ -1442,8 +1446,7 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f030022;
     }
     public static final class menu {
-        public static final int main=0x7f0e0000;
-        public static final int menu=0x7f0e0001;
+        public static final int menu=0x7f0e0000;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1486,10 +1489,11 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f080026;
+        public static final int action_refresh=0x7f08002d;
         /**  Menu list_places.xml 
          */
-        public static final int action_search=0x7f08002c;
-        public static final int action_settings=0x7f08002a;
+        public static final int action_search=0x7f08002b;
+        public static final int action_settings=0x7f08002c;
         public static final int app_name=0x7f080028;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
@@ -1587,16 +1591,16 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f080013;
         /**  Connection Error Layout 
          */
-        public static final int connection_error_1=0x7f08002d;
-        public static final int connection_error_2=0x7f08002e;
-        public static final int empty=0x7f08002b;
+        public static final int connection_error_1=0x7f08002e;
+        public static final int connection_error_2=0x7f08002f;
+        public static final int empty=0x7f08002a;
         public static final int hello_world=0x7f080029;
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f08001a;
-        /**  Searchable 
+        /**  Search Widget
          */
-        public static final int search_hint=0x7f08002f;
+        public static final int search_hint=0x7f080030;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

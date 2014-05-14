@@ -1,4 +1,4 @@
-package fragments;
+package com.fragments;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ import com.devspark.progressfragment.ProgressFragment;
 import com.perta.R;
 import com.services.RequestJSON;
 
-public class ListPlacesFragments extends ProgressFragment {
+public class ListPlacesFragment extends ProgressFragment {
 
 	/**
 	 * Lista de lugares
@@ -46,19 +46,34 @@ public class ListPlacesFragments extends ProgressFragment {
 		setContentView(mContentView);
 		setEmptyText(R.string.empty);
 
-		
 		new GetPlaces().execute();
 	}
 
-	public static ListPlacesFragments newInstance(double lat, double lng) {
-		ListPlacesFragments.lat = lat;
-		ListPlacesFragments.lng = lng;
-		ListPlacesFragments fragment = new ListPlacesFragments();
+	/**
+	 * Cria um ListPlacesFragment passando a latitude e longitude para a lista
+	 * já carregue com os pontos atualizados
+	 * 
+	 * @param lat
+	 * @param lng
+	 * @return
+	 */
+	public static ListPlacesFragment newInstance(double lat, double lng) {
+		ListPlacesFragment.lat = lat;
+		ListPlacesFragment.lng = lng;
+		ListPlacesFragment fragment = new ListPlacesFragment();
 		return fragment;
 	}
 
+	/**
+	 * Método que atualiza os pontos da lista apartir dos parametros
+	 * 
+	 * @param query
+	 * @param lat
+	 * @param lng
+	 */
 	public void dataUpdate(String query, double lat, double lng) {
 		this.query = query;
+		//atualiza a lista
 		new GetPlaces().execute();
 	}
 
@@ -81,8 +96,8 @@ public class ListPlacesFragments extends ProgressFragment {
 		protected Void doInBackground(Void... params) {
 			/**/
 			// pega a lista de pontos
-			arrayPlaces = rj.requestPlacesJSON(ListPlacesFragments.lat,
-					ListPlacesFragments.lng, query, k);
+			arrayPlaces = rj.requestPlacesJSON(ListPlacesFragment.lat,
+					ListPlacesFragment.lng, query, k);
 
 			// limpa a palavra da busca
 			query = "";
@@ -98,7 +113,6 @@ public class ListPlacesFragments extends ProgressFragment {
 				ListPlacesAdpter adapter = new ListPlacesAdpter(getActivity(),
 						arrayPlaces);
 				list.setAdapter(adapter);
-				
 			} else {
 				setEmptyText(R.string.empty);
 			}

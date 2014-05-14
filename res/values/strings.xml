@@ -3,23 +3,28 @@
 
     <string name="app_name">PerTA</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-	
     <string name="empty">Sem Dados</string>
+
     <!-- Menu list_places.xml -->
     <string name="action_search">Buscar</string>
+    <string name="action_settings">Configurações</string>
+	<string name="action_refresh">atualizar</string>
+    
     
     <!-- Connection Error Layout -->
     <string name="connection_error_1">Erro de conexão</string>
     <string name="connection_error_2">Toque para tentar novamente</string>
+
+    <!-- Categorias do filtro -->
     <string-array name="categories">
-        <item >Eventos</item>
-        <item >Natureza</item>
-        <item >Lojas e Serviços</item>
-        <item >Turismo</item>
-        <item >Todos</item>
+        <item>Eventos</item>
+        <item>Natureza</item>
+        <item>Lojas e Serviços</item>
+        <item>Turismo</item>
+        <item>Todos</item>
     </string-array>
-	
-  	<!-- Searchable -->
+
+    <!-- Search Widget-->
     <string name="search_hint">Pesquisar</string>
+
 </resources>
